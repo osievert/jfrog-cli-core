@@ -38,7 +38,7 @@ func (sc *SearchCommand) Search() (*content.ContentReader, error) {
 	}
 
 	// Search Loop
-	log.Info("Searching artifacts...")
+	log.Info("Searching for artifacts...")
 	var searchResults []*content.ContentReader
 	defer func() {
 		for _, reader := range searchResults {
@@ -51,7 +51,7 @@ func (sc *SearchCommand) Search() (*content.ContentReader, error) {
 			log.Error(err)
 			return nil, err
 		}
-		log.Info("searchParams")
+		// log.Info("searchParams")
 
 		reader, err := servicesManager.SearchFiles(searchParams)
 		if err != nil {
