@@ -1,7 +1,6 @@
 package generic
 
 import (
-	"github.com/davecgh/go-spew/spew"
 	"github.com/jfrog/jfrog-cli-core/artifactory/utils"
 	clientartutils "github.com/jfrog/jfrog-client-go/artifactory/services/utils"
 	"github.com/jfrog/jfrog-client-go/utils/errorutils"
@@ -52,7 +51,7 @@ func (sc *SearchCommand) Search() (*content.ContentReader, error) {
 			log.Error(err)
 			return nil, err
 		}
-		spew.Dump(searchParams)
+		log.Info(searchParams)
 
 		reader, err := servicesManager.SearchFiles(searchParams)
 		if err != nil {
