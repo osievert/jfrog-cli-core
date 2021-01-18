@@ -51,7 +51,7 @@ func (sc *SearchCommand) Search() (*content.ContentReader, error) {
 			log.Error(err)
 			return nil, err
 		}
-		log.Info(searchParams)
+		log.Info("searchParams")
 
 		reader, err := servicesManager.SearchFiles(searchParams)
 		if err != nil {
